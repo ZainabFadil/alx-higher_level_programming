@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 def no_c(my_string):
-    temp = ""
-    for i in my_string:
-        if i != 'C' and i != 'c':
-            temp += i
-    return temp
+    punctuation = str.maketrans("", "", "Cc")
+    new_string = my_string.translate(punctuation)
+    return new_string
