@@ -5,7 +5,7 @@ def roman_to_int(roman_string):
     i = n - 1
     sum = 0
     while i >= 0:
-        if i < n -1 and myDcit[roman_string[i]] < myDcit[roman_string[i+1]]:
+        if i < n - 1 and myDcit[roman_string[i]] < myDcit[roman_string[i+1]]:
             sum -= myDcit[roman_string[i]]
         else:
             sum += myDcit[roman_string[i]]
