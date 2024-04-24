@@ -1,4 +1,10 @@
-a_dictionary = {'John': 12, 'Alex': 8, 'Bob': 14, 'Mike': 14, 'Molly': 16}
-b = a_dictionary.copy()
-b['zainab'] = 15
-print(b, a_dictionary)
+strg = "Zainab"
+flag = 1
+for i in range (len(strg)):
+    if not flag:
+        flag = 1
+        continue
+    print (strg[i])
+    if strg[i+1] == 'n':
+        flag = 0
+ 
