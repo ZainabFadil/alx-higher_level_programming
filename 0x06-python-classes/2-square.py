@@ -10,6 +10,6 @@ class Square:
         Args:
             size(int): size of the squar
         """
-        assert size >= 0, ValueError('size must be >= 0')
+        assert size >= 0, ValueError("size must be positive")  # Only allows positive sizes
         assert isinstance(size, int), TypeError("size must be an integer")
         self.__size = size
