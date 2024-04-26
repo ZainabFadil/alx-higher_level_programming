@@ -13,6 +13,3 @@ class Square:
         assert size >= 0, ValueError('size must be >= 0')
         assert type(size) is int, TypeError('size must be >= 0')
         self.__size = size
-
-
-square1 = Square(5)
