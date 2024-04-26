@@ -11,5 +11,5 @@ class Square:
             size(int): size of the squar
         """
         assert size >= 0, ValueError('size must be >= 0')
-        assert type(size) is int, TypeError('size must be >= 0')
+        assert isinstance(size, int), TypeError("size must be an integer")
         self.__size = size
