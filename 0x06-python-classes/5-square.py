@@ -37,3 +37,14 @@ class Square:
             self(object): the object area
         """
         return self.__size * self.__size
+
+    def my_print(self):
+        """
+        prints the square using # char
+        """
+        if self.__size == 0:
+            print()
+        for i in range(self.__size):
+            for j in range(self.__size):
+                print('#', end='')
+            print()
