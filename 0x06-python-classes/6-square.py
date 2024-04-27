@@ -1,14 +1,15 @@
 #!/usr/bin/python3
-"""module for deining square"""
+"""My square module"""
 
 
 class Square:
-    """class for squares"""
+    """defines a square"""
+
     def __init__(self, size=0, position=(0, 0)):
-        """
-        constructor to initialize values
+        """Create a Square
         Args:
-            size(int): size of the squar
+            size: length of a side of Square
+            position: where the square is (coordinates)
         """
         self.size = size
         self.position = position
@@ -18,23 +19,36 @@ class Square:
 
     @property
     def size(self):
-        """get the size of he square"""
+        """"The propery of size as the len of a side of Square
+        Raises:
+            TypeError: if size != int
+            ValueError: if size < 0
+        """
         return self.__size
 
     @size.setter
-    def size(self, val):
-        if not isinstance(val, int):
+    def size(self, value):
+        if not isinstance(value, int):
             raise TypeError('size must be an integer')
-        elif val < 0:
+        if value < 0:
             raise ValueError('size must be >= 0')
-        self.__size = val
+        self.__size = value
 
     @property
     def position(self):
+        """property of the coordinates of this Square
+        Raises:
+            TypeError: if value != a tuple of 2 integers < 0
+        """
         return self.__position
 
     @position.setter
-    def size(self, value):
+    def position(self, value):
+        """set the position of this Square
+        Args: value as a tuple of two positive integers
+        Raises:
+            TypeError: if value is not a tuple or any int in tuple < 0
+        """
         if not isinstance(value, tuple):
             raise TypeError('position must be a tuple of 2 positive integers')
         if len(value) != 2:
@@ -44,23 +58,10 @@ class Square:
         self.__position = value
 
     def area(self):
-        """
-        function that returns area
-        Args:
-            self(object): the object area
+        """Get the area of a Square
+        Returns: The size squared
         """
         return self.__size * self.__size
-
-    def my_print(self):
-        """
-        prints the square using # char
-        """
-        if self.__size == 0:
-            print()
-        for i in range(self.__size):
-            for j in range(self.__size):
-                print('#', end='')
-            print()
 
     def pos_print(self):
         """returns the position in spaces"""
@@ -80,3 +81,4 @@ class Square:
     def my_print(self):
         """print the square in position"""
         print(self.pos_print(), end='')
+        
